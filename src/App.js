@@ -27,8 +27,15 @@ function renderFood(dish){
 class App extends React.Component{
 
   state = {
-    isLoading: true
+    isLoading: true,
+    movie: []
   };
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({isLoading:false});
+    }, 6000);
+  }
 
   render(){
     const { isLoading } = this.state;
