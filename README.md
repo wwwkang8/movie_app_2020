@@ -36,6 +36,15 @@ componentDidUpdate : 컴포넌트가 리렌더링을 마친 후 실행됩니다.
 componentWillUnmount : 컴포넌트가 DOM에서 사라진 후 실행되는 메소드입니다.
 
 
+## async와 await을 사용하는 이유
+한줄 요약 : 비동기 함수를 동기함수처럼 사용하게 할 수 있는 것.(참고 URL : https://victorydntmd.tistory.com/87)
+(* 동기 : 순차적으로 함수를 처리, 
+비동기 : 자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미합니다. )
+async / await은 항상 함께 사용하여야 한다.
+
+자바스크립트의 비동기 처리시에 영화 API를 통해서 많은 양의 데이터를 불러오려면 시간이 걸린다. 비동기 함수의 경우 영화 데이터를 모두 가져오기도 전에 다음 함수가 호출이 되버린다. 이러한 문제를 방지하기 위해서 async/await을 사용해서 영화 데이터 반환 함수가 끝날때까지 대기 후에 다음 함수를 호출하는 것이다. 즉 async. await은 비동기를 동기처리 시켜주는 기능이다.
+(참고 : https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
+
 
 
 
