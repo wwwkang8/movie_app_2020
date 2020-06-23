@@ -1,28 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-
-function Food({name,image, rating}){
-  return (
-  <div> 
-    <h2>I like {name} </h2>
-    <h4>{rating}/5.0 </h4>
-    <img src={image} alt = "food"/>
-    
-    </div>
-  );
-}
-
-Food.propTypes = {
-  name : PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  rating: PropTypes.number
-};
-
-
-function renderFood(dish){
-  return (<Food key = {dish.id} name = {dish.name} image = {dish.image} rating={dish.rating}/>);
-
-}
+import axios from "axios";
 
 class App extends React.Component{
 
@@ -31,10 +9,16 @@ class App extends React.Component{
     movie: []
   };
 
+  getMovies = async() => {
+
+    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+
+  }
+
   componentDidMount(){
-    setTimeout(() => {
-      this.setState({isLoading:false});
-    }, 6000);
+
+    this.getMovies();
+
   }
 
   render(){
