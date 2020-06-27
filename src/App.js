@@ -33,7 +33,7 @@ class App extends React.Component{
     return <div>{ isLoading 
       ? 
       (<div className ="loader">
-        <span className="loader__text">Loading...</span>
+        <span className="loader__text">정호의 영화 리스트 로딩중....</span>
       </div>)
       : 
       <div className = "movies">
